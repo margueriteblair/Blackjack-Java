@@ -6,3 +6,5 @@ public enum Suit {
     CLUBS,
     HEARTS
 }
+//enum constants are implicitly final
+
