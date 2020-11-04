@@ -8,4 +8,10 @@ public class Card {
         this.suit = suit;
         this.rank = rank;
     }
+
+    public void displayCard(Card card) {
+        System.out.println(card.suit + " " + card.rank);
+    }
+
+
 }

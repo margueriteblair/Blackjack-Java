@@ -1,8 +1,11 @@
 package com.margieblair;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        DeckOfCards deck = new DeckOfCards();
+        System.out.println(Arrays.toString(deck.cards));
     }
 }
