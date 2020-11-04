@@ -6,6 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         DeckOfCards deck = new DeckOfCards();
-        System.out.println(Arrays.toString(deck.cards));
+        for (var card : deck.cards) {
+            card.displayCard(card);
+        }
     }
 }
