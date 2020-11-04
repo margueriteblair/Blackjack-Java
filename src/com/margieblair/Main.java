@@ -1,17 +1,15 @@
 package com.margieblair;
 
 import java.util.Arrays;
-
+import java.util.stream.Collectors;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         DeckOfCards deck = new DeckOfCards();
-        for (int i = 0; i < deck.cards.length; i++) {
-            for (int j = 0; j < deck.cards[i].length; j++) {
-                (deck.cards[i][j]).displayCard();
-            }
+        for (var card : deck.cards) {
+            card.displayCard();
         }
-
     }
 }
