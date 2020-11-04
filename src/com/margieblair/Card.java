@@ -9,8 +9,8 @@ public class Card {
         this.rank = rank;
     }
 
-    public void displayCard(Card card) {
-        System.out.println(card.suit + " " + card.rank);
+    public void displayCard() {
+        System.out.println(suit + " " + rank);
     }
 
 
