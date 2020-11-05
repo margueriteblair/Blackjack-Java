@@ -1,5 +1,6 @@
 package com.margieblair;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DeckOfCards {
@@ -15,4 +16,16 @@ public class DeckOfCards {
 
         }
     }
+    public void draw(int numDraw) {
+        for (int i = 0; i < numDraw; i++) {
+            System.out.println(cards.get(0));
+            cards.remove(0);
+        }
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+
+
 }
