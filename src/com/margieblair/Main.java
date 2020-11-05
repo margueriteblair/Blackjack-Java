@@ -11,7 +11,11 @@ public class Main {
 //        for (var card : deck.cards) {
 //            card.displayCard();
 //        }
-        deck.shuffle();
-        deck.draw(2);
+//        deck.shuffle();
+//        deck.draw(2);
+        while(true) {
+            BlackjackConsole.runCycle();
+        }
+
     }
 }
