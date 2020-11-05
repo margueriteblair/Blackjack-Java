@@ -30,6 +30,13 @@ public class BlackjackConsole {
                 currentPlayerHuman = !currentPlayerHuman;
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
                 gameDeck.draw(2);
+                if (gameDeck.getCpuTotalPoints() < 21 && gameDeck.getCpuTotalPoints() > gameDeck.getPlayer1Total()) {
+                    System.out.println("Game over! CPU wins :(");
+                    return;
+                } else if (gameDeck.getPlayer1Total() < 21 && gameDeck.getCpuTotalPoints() < gameDeck.getPlayer1Total()) {
+                    System.out.println("Congratulations! You win :)");
+                    return;
+                }
             } else {
                 throw new IllegalArgumentException("Only input 1 or 2");
             }
