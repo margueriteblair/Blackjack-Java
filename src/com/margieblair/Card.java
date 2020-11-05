@@ -1,8 +1,11 @@
 package com.margieblair;
 
+import java.util.Scanner;
+
 public class Card {
     private Suit suit;
     private Ranks rank;
+    private Scanner scanner = new Scanner(System.in);
 
     public Card(Suit suit, Ranks rank) {
         this.suit = suit;
@@ -16,7 +19,9 @@ public class Card {
     public int returnCardValue() {
         switch(rank) {
             case ACE -> {
-                return 1;
+                System.out.println("Do you want your Ace worth 1 or 11?");
+                int aceVal = scanner.nextInt();
+                return aceVal;
             }
             case TWO -> {
                 return 2;

@@ -44,6 +44,9 @@ public class BlackjackConsole {
                 } else if (gameDeck.getCpuTotalPoints() > 21 && gameDeck.getPlayer1Total() < 21) {
                     System.out.println("Congratulations! You win :)");
                     return;
+                } else if (gameDeck.getPlayer1Total() == 21 && gameDeck.getPlayer1Total() == 21) {
+                    System.out.println("This is weird...There's been a tie...?");
+                    return;
                 }
             } else {
                 throw new IllegalArgumentException("Only input 1 or 2");
