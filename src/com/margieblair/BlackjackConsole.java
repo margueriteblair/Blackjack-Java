@@ -21,6 +21,8 @@ public class BlackjackConsole {
                 gameDeck.draw(1);
             } else if (hitOrStand == 2) {
                 break;
+            } else {
+                throw new IllegalArgumentException("Only input 1 or 2");
             }
         }
         System.out.println("Now the CPU's turn...");
