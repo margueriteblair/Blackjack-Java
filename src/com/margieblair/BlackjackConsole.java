@@ -9,7 +9,6 @@ public class BlackjackConsole {
     static String player = currentPlayerHuman ? "Player" : "CPU";
 
     static public void runCycle() {
-
         DeckOfCards gameDeck = new DeckOfCards();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Blackjack, Java Style B-) Shuffling deck...");
