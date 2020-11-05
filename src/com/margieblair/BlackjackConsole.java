@@ -5,16 +5,16 @@ import java.util.Scanner;
 import java.util.List;
 
 public class BlackjackConsole {
-
-    private boolean currentPlayerHuman = true;
-    private String player = currentPlayerHuman ? "Player" : "CPU";
+    static boolean currentPlayerHuman = true;
+    static String player = currentPlayerHuman ? "Player" : "CPU";
 
     static public void runCycle() {
+
         DeckOfCards gameDeck = new DeckOfCards();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to Blackjack, Java Style B) Shuffling deck...");
+        System.out.println("Welcome to Blackjack, Java Style B-) Shuffling deck...");
         gameDeck.shuffle();
-        System.out.println(player + ", your cards are: ");
+        System.out.println(BlackjackConsole.player + ", your cards are: ");
         gameDeck.draw(2);
         while (true) {
             System.out.println("Hit (1) or stand? (2)");
@@ -23,12 +23,18 @@ public class BlackjackConsole {
                 gameDeck.draw(1);
                 gameDeck.displayPlayerTotals();
             } else if (hitOrStand == 2) {
-                break;
+                currentPlayerHuman = !currentPlayerHuman;
+                System.out.println("Now it's the " + player + "'s turn...");
             } else {
                 throw new IllegalArgumentException("Only input 1 or 2");
             }
         }
-        System.out.println("Now the CPU's turn...");
+
 
     }
+
+    public static String getPlayer() {
+        return player;
+    }
+
 }
