@@ -15,6 +15,7 @@ public class BlackjackConsole {
         gameDeck.shuffle();
         System.out.println(BlackjackConsole.player + ", your cards are: ");
         gameDeck.draw(2);
+        gameDeck.displayPlayerTotals();
         while (true) {
             System.out.println("Hit (1) or stand? (2)");
             int hitOrStand = scanner.nextInt();
@@ -24,6 +25,7 @@ public class BlackjackConsole {
             } else if (hitOrStand == 2) {
                 currentPlayerHuman = !currentPlayerHuman;
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
+                gameDeck.draw(2);
             } else {
                 throw new IllegalArgumentException("Only input 1 or 2");
             }

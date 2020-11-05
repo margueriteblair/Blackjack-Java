@@ -27,7 +27,11 @@ public class DeckOfCards {
     public void draw(int numDraw) {
         for (int i = 0; i < numDraw; i++) {
             cards.get(0).displayCard();
-            playerCards.add(cards.get(0).returnCardValue());
+            if (BlackjackConsole.getPlayer().equals("Player")) {
+                playerCards.add(cards.get(0).returnCardValue());
+            } else {
+                cpuCards.add(cards.get(0).returnCardValue());
+            }
             cards.remove(0);
         }
     }
@@ -37,10 +41,8 @@ public class DeckOfCards {
     }
 
     public void displayPlayerTotals() {
-        var playerTotal =playerCards.stream().mapToInt(i -> i).sum();
-
+        var playerTotal = playerCards.stream().mapToInt(i -> i).sum();
         var cpuTotal = cpuCards.stream().mapToInt(i -> i).sum();
-
         System.out.println("Player, your total right now is " + playerTotal + " while CPU total is " + cpuTotal);
     }
 
