@@ -1,8 +1,11 @@
 package com.margieblair;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.List;
 
 public class BlackjackConsole {
+    private List<Integer> playerCards = new ArrayList<>();
 
     static public void runCycle() {
         DeckOfCards gameDeck = new DeckOfCards();
