@@ -27,7 +27,6 @@ public class Card {
                 } catch (NumberFormatException ex) {
                     return 1;
                 }
-
             }
             case TWO -> {
                 return 2;

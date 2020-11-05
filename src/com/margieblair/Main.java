@@ -7,8 +7,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        DeckOfCards deck = new DeckOfCards();
-//        for (var card : deck.cards) {
+//        DeckOfCards deck = new DeckOfCards();
+//        for (var card : deck.getCards()) {
 //            card.displayCard();
 //        }
 //        deck.shuffle();
