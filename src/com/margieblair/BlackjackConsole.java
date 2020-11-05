@@ -24,7 +24,7 @@ public class BlackjackConsole {
                 gameDeck.displayPlayerTotals();
             } else if (hitOrStand == 2) {
                 currentPlayerHuman = !currentPlayerHuman;
-                System.out.println("Now it's the " + player + "'s turn...");
+                System.out.println("Now it's the " + getPlayer() + "'s turn...");
             } else {
                 throw new IllegalArgumentException("Only input 1 or 2");
             }
@@ -34,7 +34,7 @@ public class BlackjackConsole {
     }
 
     public static String getPlayer() {
-        return player;
+        return currentPlayerHuman ? "Player" : "CPU";
     }
 
 }
