@@ -11,8 +11,17 @@ public class BlackjackConsole {
         gameDeck.shuffle();
         System.out.println("Player, your cards are: ");
         gameDeck.draw(2);
-        System.out.println("Hit (1) or stand? (2)");
-        int hitOrStand = scanner.nextInt();
+        while (true) {
+            System.out.println("Hit (1) or stand? (2)");
+            int hitOrStand = scanner.nextInt();
+            if (hitOrStand == 1) {
+                gameDeck.draw(1);
+            } else if (hitOrStand == 2) {
+                break;
+            }
+        }
+        System.out.println("Now the CPU's turn...");
+
 
     }
 }
