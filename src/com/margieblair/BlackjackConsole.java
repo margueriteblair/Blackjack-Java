@@ -22,6 +22,10 @@ public class BlackjackConsole {
             if (hitOrStand == 1) {
                 gameDeck.draw(1);
                 gameDeck.displayPlayerTotals();
+                if (gameDeck.getPlayer1Total() > 21) {
+                    System.out.println("Game over! CPU wins :(");
+                    break;
+                }
             } else if (hitOrStand == 2) {
                 currentPlayerHuman = !currentPlayerHuman;
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
