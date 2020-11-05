@@ -19,9 +19,15 @@ public class Card {
     public int returnCardValue() {
         switch(rank) {
             case ACE -> {
-                System.out.println("Do you want your Ace worth 1 or 11?");
-                int aceVal = scanner.nextInt();
-                return aceVal;
+                System.out.println("Do you want your Ace worth 1 or 11? Any other answers will default to 1.");
+                try {
+                    int aceVal = scanner.nextInt();
+                    if (aceVal != 1 || aceVal != 11) return 1;
+                    return aceVal;
+                } catch (NumberFormatException ex) {
+                    return 1;
+                }
+
             }
             case TWO -> {
                 return 2;
