@@ -6,6 +6,8 @@ import java.util.List;
 
 public class BlackjackConsole {
 
+    private boolean currentPlayerHuman = true;
+
     static public void runCycle() {
         DeckOfCards gameDeck = new DeckOfCards();
         Scanner scanner = new Scanner(System.in);
