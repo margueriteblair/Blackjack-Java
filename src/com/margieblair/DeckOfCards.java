@@ -45,7 +45,7 @@ public class DeckOfCards {
     public void displayPlayerTotals() {
         var playerTotal = playerCards.stream().mapToInt(i -> i).sum();
         var cpuTotal = cpuCards.stream().mapToInt(i -> i).sum();
-        System.out.println(BlackjackConsole.getPlayer() + ", your total right now is " + playerTotal + " while CPU total is " + cpuTotal);
+        System.out.println("Player, your total right now is " + playerTotal + " while CPU total is " + cpuTotal);
 
         cpuTotalPoints = cpuTotal;
         player1Total = playerTotal;

@@ -13,9 +13,7 @@ public class Main {
 //        }
 //        deck.shuffle();
 //        deck.draw(2);
-        while(true) {
             BlackjackConsole.runCycle();
-        }
 
     }
 }

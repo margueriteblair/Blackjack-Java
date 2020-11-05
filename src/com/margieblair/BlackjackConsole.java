@@ -30,10 +30,18 @@ public class BlackjackConsole {
                 currentPlayerHuman = !currentPlayerHuman;
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
                 gameDeck.draw(2);
+                gameDeck.displayPlayerTotals();
+                while (gameDeck.getCpuTotalPoints() < 21 || gameDeck.getCpuTotalPoints() < gameDeck.getPlayer1Total()) {
+                    gameDeck.draw(1);
+                    gameDeck.displayPlayerTotals();
+                }
                 if (gameDeck.getCpuTotalPoints() < 21 && gameDeck.getCpuTotalPoints() > gameDeck.getPlayer1Total()) {
                     System.out.println("Game over! CPU wins :(");
                     return;
                 } else if (gameDeck.getPlayer1Total() < 21 && gameDeck.getCpuTotalPoints() < gameDeck.getPlayer1Total()) {
+                    System.out.println("Congratulations! You win :)");
+                    return;
+                } else if (gameDeck.getCpuTotalPoints() > 21 && gameDeck.getPlayer1Total() < 21) {
                     System.out.println("Congratulations! You win :)");
                     return;
                 }
