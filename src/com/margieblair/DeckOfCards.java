@@ -2,6 +2,8 @@ package com.margieblair;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class DeckOfCards {
     public ArrayList<Card> cards;
@@ -16,9 +18,14 @@ public class DeckOfCards {
 
         }
     }
+
+    public void shuffle() {
+        Collections.shuffle(cards);
+    }
+
     public void draw(int numDraw) {
         for (int i = 0; i < numDraw; i++) {
-            System.out.println(cards.get(0));
+            cards.get(0).displayCard();
             cards.remove(0);
         }
     }

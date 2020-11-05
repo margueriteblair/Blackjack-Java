@@ -8,8 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
         DeckOfCards deck = new DeckOfCards();
-        for (var card : deck.cards) {
-            card.displayCard();
-        }
+//        for (var card : deck.cards) {
+//            card.displayCard();
+//        }
+        deck.shuffle();
+        deck.draw(2);
     }
 }
