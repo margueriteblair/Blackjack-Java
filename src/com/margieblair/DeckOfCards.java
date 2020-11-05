@@ -1,15 +1,13 @@
 package com.margieblair;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class DeckOfCards {
     public ArrayList<Card> cards;
-    private List<Card> playerCards = new ArrayList<>();
-    private List<Card> cpuCards = new ArrayList<>();
+    private List<Integer> playerCards = new ArrayList<>();
+    private List<Integer> cpuCards = new ArrayList<>();
 
     public DeckOfCards() {
         this.cards = new ArrayList<>();
@@ -29,7 +27,7 @@ public class DeckOfCards {
     public void draw(int numDraw) {
         for (int i = 0; i < numDraw; i++) {
             cards.get(0).displayCard();
-            playerCards.add(cards.get(0));
+            playerCards.add(cards.get(0).returnCardValue());
             cards.remove(0);
         }
     }
