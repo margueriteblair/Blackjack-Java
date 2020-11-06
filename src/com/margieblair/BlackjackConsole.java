@@ -1,8 +1,6 @@
 package com.margieblair;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.List;
 
 public class BlackjackConsole {
     static boolean currentPlayerHuman = true;

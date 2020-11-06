@@ -20,16 +20,23 @@ public class Card {
     public int returnCardValue() {
         switch(rank) {
             case ACE -> {
-                while (true) {
-                    System.out.println("Do you want your Ace worth 1 or 11?");
-                    int aceVal = scanner.nextInt();
-                    try {
-                        if (aceVal != 1 || aceVal != 11) continue;
-                        if (aceVal == 1 || aceVal == 11) return aceVal;
-                    } catch (NumberFormatException | InputMismatchException ex) {
-                        ex.printStackTrace();
+                if (BlackjackConsole.getPlayer().equals("Player")) {
+                    while (true) {
+                        System.out.println("Do you want your Ace worth 1 or 11?");
+                        int aceVal = scanner.nextInt();
+                        try {
+                            if (aceVal != 1 || aceVal != 11) continue;
+                            if (aceVal == 1 || aceVal == 11) return aceVal;
+                        } catch (NumberFormatException | InputMismatchException ex) {
+                            ex.printStackTrace();
+                        }
                     }
+                } else {
+
+                    if (Main.dealer.getPoints() <= 10) return 11;
+                    else return 1;
                 }
+
             }
             case TWO -> {
                 return 2;
