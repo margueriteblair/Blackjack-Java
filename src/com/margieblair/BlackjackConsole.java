@@ -17,14 +17,13 @@ public class BlackjackConsole {
         gameDeck.shuffle();
         System.out.println(player1.getName() + ", your cards are: ");
         player1.draw(2);
-        player1.displayPlayerTotals();
-        System.out.println(player1.getName() + ": " + player1.getPoints());
+        player1.displayPoints();
         while (true) {
             System.out.println("Hit (1) or stand? (2)");
             int hitOrStand = scanner.nextInt();
             if (hitOrStand == 1) {
                 player1.draw(1);
-                player1.displayPlayerTotals();
+                player1.displayPoints();
                 if (player1.getPoints() > 21) {
                     System.out.println("Game over! CPU wins :(");
                     break;
@@ -43,10 +42,10 @@ public class BlackjackConsole {
                     System.out.println("Game over! CPU wins :(");
                     return;
                 } else if (player1.getPoints() < 21 && dealer.getPoints() < player1.getPoints()) {
-                    System.out.println("Congratulations! You win :)");
+                    System.out.println("Congratulations! Player wins :)");
                     return;
                 } else if (dealer.getPoints() > 21 && player1.getPoints() < 21) {
-                    System.out.println("Congratulations! You win :)");
+                    System.out.println("Congratulations! Player wins :)");
                     return;
                 } else if (player1.getPoints() == 21 && player1.getPoints() == 21) {
                     System.out.println("This is weird...There's been a tie...?");
