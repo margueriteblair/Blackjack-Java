@@ -21,11 +21,10 @@ public class Card {
         switch(rank) {
             case ACE -> {
                 while (true) {
-                    System.out.println("Do you want your Ace worth 1 or 11? Any other answers will default to 1.");
-                    Integer aceVal = scanner.nextInt();
+                    System.out.println("Do you want your Ace worth 1 or 11?");
+                    int aceVal = scanner.nextInt();
                     try {
                         if (aceVal != 1 || aceVal != 11) continue;
-                        if (!(aceVal instanceof Integer)) continue;
                         if (aceVal == 1 || aceVal == 11) return aceVal;
                     } catch (NumberFormatException | InputMismatchException ex) {
                         ex.printStackTrace();
