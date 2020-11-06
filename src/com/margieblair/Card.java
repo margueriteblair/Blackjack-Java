@@ -54,7 +54,6 @@ public class Card {
             }
             case TEN, JACK, QUEEN, KING -> {
                 return 10;
-                //you use a comma to separate the different cases that would result in the same value
             }
             default -> {
                 return 0;
