@@ -11,8 +11,6 @@ public abstract class Hand {
     }
 
     public abstract void draw(int num);
-
-    public void displayPlayerTotals() {
-    }
+    public abstract void displayPoints();
 
 }

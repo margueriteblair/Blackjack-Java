@@ -1,5 +1,6 @@
 package com.margieblair;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Card {
@@ -19,14 +20,20 @@ public class Card {
     public int returnCardValue() {
         switch(rank) {
             case ACE -> {
-                System.out.println("Do you want your Ace worth 1 or 11? Any other answers will default to 1.");
-                try {
-                    int aceVal = scanner.nextInt();
-                    if (aceVal != 1 || aceVal != 11) return 1;
-                    return aceVal;
-                } catch (NumberFormatException ex) {
-                    return 1;
+                while (true) {
+                    System.out.println("Do you want your Ace worth 1 or 11? Any other answers will default to 1.");
+                    try {
+                        int aceVal = scanner.nextInt();
+                        if (aceVal != 1 || aceVal != 11) continue;
+                        if (aceVal == 1 || aceVal == 11) return aceVal;
+                    } catch (NumberFormatException | InputMismatchException ex) {
+                        break;
+                    }
+                    finally {
+                        continue;
+                    }
                 }
+
             }
             case TWO -> {
                 return 2;
