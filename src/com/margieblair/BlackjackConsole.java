@@ -28,10 +28,14 @@ public class BlackjackConsole {
                 currentPlayerHuman = !currentPlayerHuman;
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
                 dealer.draw(2);
-                while (dealer.getPoints() < 17 || dealer.getPoints() < player1.getPoints()) {
-                    dealer.draw(1);
-                    dealer.displayPoints();
+                dealer.displayPoints();
+                if (dealer.getPoints() < 17) {
+                    while (dealer.getPoints() < 17) {
+                        dealer.draw(1);
+                        dealer.displayPoints();
+                    }
                 }
+
                 if (dealer.getPoints() < 21 && dealer.getPoints() > player1.getPoints()) {
                     System.out.println("Game over! CPU wins :(");
                     return;
