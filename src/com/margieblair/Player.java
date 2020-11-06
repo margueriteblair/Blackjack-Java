@@ -13,16 +13,16 @@ public class Player extends Hand{
     }
 
     public void draw(int numDraw) {
-        if (cards.size() == 0) {
+        if (BlackjackConsole.gameDeck.getCards().size() == 0) {
             System.out.println("No more cards to draw");
             return;
         }
         for (int i = 0; i < numDraw; i++) {
-            cards.get(0).displayCard();
+            BlackjackConsole.gameDeck.getCards().get(0).displayCard();
             if (BlackjackConsole.getPlayer().equals("Player")) {
-                playerCards.add(cards.get(0).returnCardValue());
+                playerCards.add(BlackjackConsole.gameDeck.getCards().get(0).returnCardValue());
             }
-            cards.remove(0);
+            BlackjackConsole.gameDeck.getCards().remove(0);
         }
     }
 
