@@ -71,5 +71,9 @@ public class Card {
         }
     }
 
+    public Ranks getRank() {
+        return rank;
+    }
+
 
 }

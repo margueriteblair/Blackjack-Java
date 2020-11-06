@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player extends Hand{
-    private List<Integer> playerCards = new ArrayList<>();
+    private List<Card> playerCards = new ArrayList<>();
     private int points;
     private String name;
     private int bet;
@@ -24,13 +24,13 @@ public class Player extends Hand{
         }
         for (int i = 0; i < numDraw; i++) {
             BlackjackConsole.gameDeck.getCards().get(0).displayCard();
-            playerCards.add(BlackjackConsole.gameDeck.getCards().get(0).returnCardValue());
+            playerCards.add(BlackjackConsole.gameDeck.getCards().get(0));
             BlackjackConsole.gameDeck.getCards().remove(0);
         }
     }
 
     public void displayPoints() {
-        var total = playerCards.stream().mapToInt(i -> i).sum();
+        var total = playerCards.stream().map(card -> card.returnCardValue()).reduce(0, Integer::sum);
         System.out.println(name + " your total right now is " + total + " .");
         points = total;
     }
