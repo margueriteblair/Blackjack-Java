@@ -29,20 +29,19 @@ public class BlackjackConsole {
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
                 dealer.draw(2);
                 dealer.displayPoints();
-                if (dealer.getPoints() < 17) {
+
                     while (dealer.getPoints() < 17) {
                         dealer.draw(1);
                         dealer.displayPoints();
-                    }
                 }
 
                 if (dealer.getPoints() < 21 && dealer.getPoints() > player1.getPoints()) {
                     System.out.println("Game over! CPU wins :(");
                     return;
-                } else if (player1.getPoints() < 21 && dealer.getPoints() < player1.getPoints()) {
+                } else if (player1.getPoints() <= 21 && dealer.getPoints() < player1.getPoints()) {
                     System.out.println("Congratulations! Player wins :)");
                     return;
-                } else if (dealer.getPoints() > 21 && player1.getPoints() < 21) {
+                } else if (dealer.getPoints() > 21 && player1.getPoints() <= 21) {
                     System.out.println("Congratulations! Player wins :)");
                     return;
                 } else if (player1.getPoints() == dealer.getPoints()) {
