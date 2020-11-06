@@ -18,7 +18,6 @@ public class DeckOfCards {
                     Card card = new Card(Suit.values()[i], Ranks.values()[j]); //instantiate the card here
                     cards.add(card);
             }
-
         }
     }
 
