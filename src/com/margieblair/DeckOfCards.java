@@ -35,6 +35,7 @@ public class DeckOfCards {
                 cpuCards.add(cards.get(0).returnCardValue());
             }
             cards.remove(0);
+            System.out.println("Remaining number of cards in deck: " + cards.size());
         }
     }
 
