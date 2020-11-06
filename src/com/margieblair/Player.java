@@ -13,6 +13,8 @@ public class Player extends Hand{
         super(name, bet);
         this.name = name;
         this.bet = bet;
+        //very weird issue i'm having where i have to redeclare name and bet despite them already being in super
+        //or else i get name and bet returned as null?
     }
 
     public void draw(int numDraw) {
