@@ -27,6 +27,10 @@ public class DeckOfCards {
     }
 
     public void draw(int numDraw) {
+        if (cards.size() == 0) {
+            System.out.println("No more cards to draw");
+            return;
+        }
         for (int i = 0; i < numDraw; i++) {
             cards.get(0).displayCard();
             if (BlackjackConsole.getPlayer().equals("Player")) {
