@@ -40,4 +40,8 @@ public class Player extends Hand{
     public int getPoints() {
         return points;
     }
+
+    public int getBet() {
+        return bet;
+    }
 }
