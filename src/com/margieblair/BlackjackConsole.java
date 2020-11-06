@@ -21,7 +21,7 @@ public class BlackjackConsole {
                 player1.draw(1);
                 player1.displayPoints();
                 if (player1.getPoints() > 21) {
-                    System.out.println("Bust! CPU wins :(");
+                    System.out.println("Bust! CPU wins :( You lose your bet of " + player1.getBet() + " points");
                     break;
                 }
             } else if (hitOrStand == 2) {
@@ -35,21 +35,19 @@ public class BlackjackConsole {
                         dealer.displayPoints();
                 }
                 if (dealer.getPoints() < 21 && dealer.getPoints() > player1.getPoints()) {
-                    System.out.println("Game over! CPU wins :( You lose " + player1.getBet());
-                    return;
+                    System.out.println("Game over! CPU wins :( You lose " + player1.getBet()+ " points");
                 } else if (player1.getPoints() <= 21 && dealer.getPoints() < player1.getPoints()) {
-                    System.out.println("Congratulations! Player wins :) You win " + (2 * player1.getBet()));
-                    return;
+                    System.out.println("Congratulations! Player wins :) You win " + (2 * player1.getBet()) + " points");
                 } else if (dealer.getPoints() > 21 && player1.getPoints() <= 21) {
-                    System.out.println("Congratulations! Player wins :) You win + " + (2 * player1.getBet()));
-                    return;
+                    System.out.println("Congratulations! Player wins :) You win " + (2 * player1.getBet()) + " points");
                 } else if (player1.getPoints() == dealer.getPoints()) {
-                    System.out.println("This is weird...Push? You get to keep your bet of " + player1.getBet());
-                    return;
+                    System.out.println("This is weird...Push? You get to keep your bet of " + player1.getBet()+ " points");
                 } else if (dealer.getPoints() == 21 && player1.getPoints() != 21) {
-                    System.out.println("Game over! CPU wins :( You lose " + player1.getBet());
-                    return;
+                    System.out.println("Game over! CPU wins :( You lose " + player1.getBet()+ " points");
                 }
+                gameDeck = new DeckOfCards();
+                gameDeck.shuffle(); //reinitialized deck for a new round and shuffled it
+                return;
             } else {
                 throw new IllegalArgumentException("Only input 1 or 2");
             }
