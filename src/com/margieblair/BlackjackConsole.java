@@ -32,8 +32,6 @@ public class BlackjackConsole {
                 currentPlayerHuman = !currentPlayerHuman;
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
                 dealer.draw(2);
-//                gameDeck.(); SHIT WHAT GOESHEREEEE
-                System.out.println(player1.getName() + ": " + player1.getPoints());
                 while (dealer.getPoints() < 21 || dealer.getPoints() < player1.getPoints()) {
                     dealer.draw(1);
                     dealer.displayPoints();
