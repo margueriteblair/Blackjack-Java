@@ -7,9 +7,10 @@ import java.util.List;
 public class BlackjackConsole {
     static boolean currentPlayerHuman = true;
     static String player = currentPlayerHuman ? "Player" : "CPU";
+    protected static DeckOfCards gameDeck = new DeckOfCards();
 
     static public void runCycle() {
-        DeckOfCards gameDeck = new DeckOfCards();
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Blackjack, Java Style B-) Shuffling deck...");
         gameDeck.shuffle();
