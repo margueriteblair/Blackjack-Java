@@ -7,10 +7,8 @@ import java.util.List;
 public class BlackjackConsole {
     static boolean currentPlayerHuman = true;
     protected static DeckOfCards gameDeck = new DeckOfCards();
-    private static Player player1 = new Player("Margie", 20);
-    private static Dealer dealer = new Dealer("CPU", 10);
 
-    static public void runCycle() {
+    static public void runCycle(Player player1, Dealer dealer) {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Blackjack, Java Style B-) Shuffling deck...");
