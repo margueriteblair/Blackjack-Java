@@ -10,7 +10,7 @@ public abstract class Hand {
         this.bet = bet;
     }
 
-    public abstract void draw();
+    public abstract void draw(int num);
 
     public void displayPlayerTotals() {
     }
