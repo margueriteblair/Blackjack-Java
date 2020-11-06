@@ -6,10 +6,6 @@ import java.util.List;
 
 public class DeckOfCards {
     private ArrayList<Card> cards;
-    private List<Integer> playerCards = new ArrayList<>();
-    private List<Integer> cpuCards = new ArrayList<>();
-    private int player1Total;
-    private int cpuTotalPoints;
 
     public DeckOfCards() {
         this.cards = new ArrayList<>();
@@ -25,43 +21,12 @@ public class DeckOfCards {
         Collections.shuffle(cards);
     }
 
-    public void draw(int numDraw) {
-        if (cards.size() == 0) {
-            System.out.println("No more cards to draw");
-            return;
-        }
-        for (int i = 0; i < numDraw; i++) {
-            cards.get(0).displayCard();
-            if (BlackjackConsole.getPlayer().equals("Player")) {
-                playerCards.add(cards.get(0).returnCardValue());
-            } else {
-                cpuCards.add(cards.get(0).returnCardValue());
-            }
-            cards.remove(0);
-            System.out.println("Remaining number of cards in deck: " + cards.size());
-        }
-    }
-
     public ArrayList<Card> getCards() {
         return cards;
     }
 
-    public void displayPlayerTotals() {
-        var playerTotal = playerCards.stream().mapToInt(i -> i).sum();
-        var cpuTotal = cpuCards.stream().mapToInt(i -> i).sum();
-        System.out.println("Player, your total right now is " + playerTotal + " while CPU total is " + cpuTotal);
 
-        cpuTotalPoints = cpuTotal;
-        player1Total = playerTotal;
-    }
 
-    public int getPlayer1Total() {
-        return player1Total;
-    }
-
-    public int getCpuTotalPoints() {
-        return cpuTotalPoints;
-    }
 
 
 }
