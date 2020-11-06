@@ -6,35 +6,36 @@ import java.util.List;
 
 public class BlackjackConsole {
     static boolean currentPlayerHuman = true;
-    static String player = currentPlayerHuman ? "Player" : "CPU";
     protected static DeckOfCards gameDeck = new DeckOfCards();
+    private static Player player1 = new Player("Margie", 20);
+    private static Dealer dealer = new Dealer("CPU", 10);
 
     static public void runCycle() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Blackjack, Java Style B-) Shuffling deck...");
         gameDeck.shuffle();
-        System.out.println(BlackjackConsole.player + ", your cards are: ");
-        gameDeck.draw(2);
-        gameDeck.displayPlayerTotals();
+        System.out.println(player1.getName() + ", your cards are: ");
+        player1.draw(2);
+        player1.displayPlayerTotals();
         while (true) {
             System.out.println("Hit (1) or stand? (2)");
             int hitOrStand = scanner.nextInt();
             if (hitOrStand == 1) {
-                gameDeck.draw(1);
-                gameDeck.displayPlayerTotals();
-                if (gameDeck.getPlayer1Total() > 21) {
+                player1.draw(1);
+                player1.displayPlayerTotals();
+                if (player1.getPoints() > 21) {
                     System.out.println("Game over! CPU wins :(");
                     break;
                 }
             } else if (hitOrStand == 2) {
                 currentPlayerHuman = !currentPlayerHuman;
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
-                gameDeck.draw(2);
-                gameDeck.displayPlayerTotals();
-                while (gameDeck.getCpuTotalPoints() < 21 || gameDeck.getCpuTotalPoints() < gameDeck.getPlayer1Total()) {
-                    gameDeck.draw(1);
-                    gameDeck.displayPlayerTotals();
+                dealer.draw(2);
+                gameDeck.();
+                while (dealer.getPoints() < 21 || gameDeck.getCpuTotalPoints() < gameDeck.getPlayer1Total()) {
+                    dealer.draw(1);
+                    dealer.displayPoints();
                 }
                 if (gameDeck.getCpuTotalPoints() < 21 && gameDeck.getCpuTotalPoints() > gameDeck.getPlayer1Total()) {
                     System.out.println("Game over! CPU wins :(");

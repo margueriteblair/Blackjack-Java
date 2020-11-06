@@ -30,5 +30,11 @@ public class Dealer extends Hand{
         }
     }
 
+    public int getPoints() {
+        return points;
+    }
+
+
+
 
 }

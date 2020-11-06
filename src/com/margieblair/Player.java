@@ -29,4 +29,12 @@ public class Player extends Hand{
         System.out.println(name + " your total right now is " + total + " .");
         points = total;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPoints() {
+        return points;
+    }
 }
