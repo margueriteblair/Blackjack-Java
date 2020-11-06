@@ -30,11 +30,11 @@ public class BlackjackConsole {
                 currentPlayerHuman = !currentPlayerHuman;
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
                 dealer.draw(2);
-                while (dealer.getPoints() < 21 || dealer.getPoints() < player1.getPoints()) {
+                while (dealer.getPoints() < 17 || dealer.getPoints() < player1.getPoints()) {
                     dealer.draw(1);
                     dealer.displayPoints();
                 }
-                if (dealer.getPoints() < 21 && dealer.getPoints() > dealer.getPoints()) {
+                if (dealer.getPoints() < 21 && dealer.getPoints() > player1.getPoints()) {
                     System.out.println("Game over! CPU wins :(");
                     return;
                 } else if (player1.getPoints() < 21 && dealer.getPoints() < player1.getPoints()) {
@@ -43,7 +43,7 @@ public class BlackjackConsole {
                 } else if (dealer.getPoints() > 21 && player1.getPoints() < 21) {
                     System.out.println("Congratulations! Player wins :)");
                     return;
-                } else if (player1.getPoints() == 21 && player1.getPoints() == 21) {
+                } else if (player1.getPoints() == dealer.getPoints()) {
                     System.out.println("This is weird...There's been a tie...?");
                     return;
                 }
