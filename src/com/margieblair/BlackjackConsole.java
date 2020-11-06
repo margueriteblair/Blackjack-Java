@@ -46,13 +46,14 @@ public class BlackjackConsole {
                 } else if (player1.getPoints() == dealer.getPoints()) {
                     System.out.println("This is weird...There's been a tie...?");
                     return;
+                } else if (dealer.getPoints() == 21 && player1.getPoints() != 21) {
+                    System.out.println("Game over! CPU wins :(");
+                    return;
                 }
             } else {
                 throw new IllegalArgumentException("Only input 1 or 2");
             }
         }
-
-
     }
 
     public static String getPlayer() {
