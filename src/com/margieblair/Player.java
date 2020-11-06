@@ -7,9 +7,12 @@ public class Player extends Hand{
     private List<Integer> playerCards = new ArrayList<>();
     private int points;
     private String name;
+    private int bet;
 
     public Player(String name, int bet) {
         super(name, bet);
+        this.name = name;
+        this.bet = bet;
     }
 
     public void draw(int numDraw) {

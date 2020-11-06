@@ -7,9 +7,12 @@ public class Dealer extends Hand{
     private int points;
     private List<Integer> cpuCards = new ArrayList<>();
     private String name;
+    private int bet;
 
     public Dealer(String name, int bet) {
         super("CPU", 0);
+        this.name = name;
+        this.bet = bet;
     }
 
     public void displayPoints() {
