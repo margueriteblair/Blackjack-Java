@@ -18,5 +18,17 @@ public class Dealer extends Hand{
         points = total;
     }
 
+    public void draw(int numDraw) {
+        if (BlackjackConsole.gameDeck.getCards().size() == 0) {
+            System.out.println("No more cards to draw");
+            return;
+        }
+        for (int i = 0; i < numDraw; i++) {
+            BlackjackConsole.gameDeck.getCards().get(0).displayCard();
+            cpuCards.add(BlackjackConsole.gameDeck.getCards().get(0).returnCardValue());
+            BlackjackConsole.gameDeck.getCards().remove(0);
+        }
+    }
+
 
 }
