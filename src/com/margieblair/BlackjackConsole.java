@@ -18,6 +18,7 @@ public class BlackjackConsole {
         System.out.println(player1.getName() + ", your cards are: ");
         player1.draw(2);
         player1.displayPlayerTotals();
+        System.out.println(player1.getName() + ": " + player1.getPoints());
         while (true) {
             System.out.println("Hit (1) or stand? (2)");
             int hitOrStand = scanner.nextInt();
@@ -33,6 +34,7 @@ public class BlackjackConsole {
                 System.out.println("Now it's the " + getPlayer() + "'s turn...");
                 dealer.draw(2);
 //                gameDeck.(); SHIT WHAT GOESHEREEEE
+                System.out.println(player1.getName() + ": " + player1.getPoints());
                 while (dealer.getPoints() < 21 || dealer.getPoints() < player1.getPoints()) {
                     dealer.draw(1);
                     dealer.displayPoints();
