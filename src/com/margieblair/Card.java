@@ -22,18 +22,15 @@ public class Card {
             case ACE -> {
                 while (true) {
                     System.out.println("Do you want your Ace worth 1 or 11? Any other answers will default to 1.");
+                    Integer aceVal = scanner.nextInt();
                     try {
-                        int aceVal = scanner.nextInt();
                         if (aceVal != 1 || aceVal != 11) continue;
+                        if (!(aceVal instanceof Integer)) continue;
                         if (aceVal == 1 || aceVal == 11) return aceVal;
                     } catch (NumberFormatException | InputMismatchException ex) {
-                        break;
-                    }
-                    finally {
-                        continue;
+                        ex.printStackTrace();
                     }
                 }
-
             }
             case TWO -> {
                 return 2;
