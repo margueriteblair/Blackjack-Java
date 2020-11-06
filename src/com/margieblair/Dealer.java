@@ -7,4 +7,8 @@ public class Dealer extends Hand{
     private int cpuTotalPoints;
     private List<Integer> cpuCards = new ArrayList<>();
 
+    public Dealer(String name, int bet) {
+        super("CPU", 0);
+    }
+
 }
