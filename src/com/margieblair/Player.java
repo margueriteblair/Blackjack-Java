@@ -24,8 +24,7 @@ public class Player extends Hand{
         }
         for (int i = 0; i < numDraw; i++) {
             BlackjackConsole.gameDeck.getCards().get(0).displayCard();
-            playerCards.add(BlackjackConsole.gameDeck.getCards().get(0));
-            BlackjackConsole.gameDeck.getCards().remove(0);
+            playerCards.add(BlackjackConsole.gameDeck.getCards().remove(0));
         }
     }
 

@@ -28,8 +28,7 @@ public class Dealer extends Hand{
         }
         for (int i = 0; i < numDraw; i++) {
             BlackjackConsole.gameDeck.getCards().get(0).displayCard();
-            cpuCards.add(BlackjackConsole.gameDeck.getCards().get(0));
-            BlackjackConsole.gameDeck.getCards().remove(0);
+            cpuCards.add(BlackjackConsole.gameDeck.getCards().remove(0));
         }
     }
 
