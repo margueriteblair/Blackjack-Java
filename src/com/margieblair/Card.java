@@ -21,16 +21,8 @@ public class Card {
         switch(rank) {
             case ACE -> {
                 if (BlackjackConsole.getPlayer().equals("Player")) {
-                    while (true) {
-                        System.out.println("Do you want your Ace worth 1 or 11?");
-                        try {
-                            int aceVal = scanner.nextInt();
-                            if (aceVal != 1 && aceVal != 11) continue;
-                            return aceVal;
-                        } catch (NumberFormatException | InputMismatchException ex) {
-                            ex.printStackTrace();
-                        }
-                    }
+                    if (Main.player1.getPoints() <= 10) return 11;
+                    else return 1;
                 } else {
                     if (Main.dealer.getPoints() <= 10) return 11;
                     else return 1;
