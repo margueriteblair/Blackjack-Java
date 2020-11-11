@@ -6,11 +6,12 @@ import java.util.List;
 
 public class DeckOfCards {
     private ArrayList<Card> cards;
+    private final static int[] RANKS = {1, 2, 3, 4, 5, 6, 7, 8 ,9, 10, 11, 12, 13};
 
     public DeckOfCards() {
         this.cards = new ArrayList<>();
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 13; j++) {
+            for (int i = 0; i < Suit.values().length; i++) {
+                for (int j = 0; j < RANKS.length; j++) {
                     Card card = new Card(Suit.values()[i], Ranks.values()[j]); //instantiate the card here
                     cards.add(card);
             }
