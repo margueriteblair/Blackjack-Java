@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Card {
     private Suit suit;
-    private Ranks rank;
+    private int rank;
 
     public Card(Suit suit, int rank) {
         this.suit = suit;
