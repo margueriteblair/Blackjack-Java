@@ -24,7 +24,7 @@ public class Card {
         String output = "";
             switch(rank) {
                 case 1:
-                    output = "ACE";
+                    output = "ACE"; //still need to include the ace logic
                     break;
                 case 11:
                     output = "JACK";
