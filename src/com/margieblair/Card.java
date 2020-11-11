@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Card {
     private Suit suit;
     private Ranks rank;
-    private Scanner scanner = new Scanner(System.in);
 
     public Card(Suit suit, Ranks rank) {
         this.suit = suit;
