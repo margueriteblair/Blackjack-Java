@@ -7,7 +7,7 @@ public class Card {
     private Suit suit;
     private Ranks rank;
 
-    public Card(Suit suit, Ranks rank) {
+    public Card(Suit suit, int rank) {
         this.suit = suit;
         this.rank = rank;
     }

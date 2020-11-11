@@ -12,7 +12,7 @@ public class DeckOfCards {
         this.cards = new ArrayList<>();
             for (int i = 0; i < Suit.values().length; i++) {
                 for (int j = 0; j < RANKS.length; j++) {
-                    Card card = new Card(Suit.values()[i], Ranks.values()[j]); //instantiate the card here
+                    Card card = new Card(Suit.values()[i], RANKS[j]); //instantiate the card here
                     cards.add(card);
             }
         }
