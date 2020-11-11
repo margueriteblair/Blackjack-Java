@@ -16,24 +16,25 @@ public class Card {
         System.out.println(suit + " " + rank);
     }
 
-    public int returnCardValue() {
-        switch(rank) {
-            case ACE -> {
-                if (BlackjackConsole.getPlayer().equals("Player")) {
-                    if (Main.player1.getPoints() <= 10) return 11;
-                    else return 1;
-                } else {
-                    if (Main.dealer.getPoints() <= 10) return 11;
-                    else return 1;
-                }
-
+    public String returnCardValue() {
+        String output = "";
+            switch(rank) {
+                case 1:
+                    output = "ACE";
+                    break;
+                case 11:
+                    output = "JA";
+                    break;
+                case 12:
+                    output = "QU";
+                    break;
+                case 13:
+                    output = "KI";
+                    break;
+                default:
+                    output = rank == 10 ? Integer.toString(rank) : " " + rank;
             }
-            case TEN, JACK, QUEEN, KING -> {
-                return 10;
-            }
-            default -> {
-                return 0;
-            }
+            return output;
 
         }
     }
