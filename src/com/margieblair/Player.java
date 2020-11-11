@@ -29,7 +29,7 @@ public class Player extends Hand{
     }
 
     public void displayPoints() {
-        var total = playerCards.stream().map(Card::returnCardValue).reduce(0, Integer::sum);
+        var total = playerCards.stream().map(Card::getRank).reduce(0, Integer::sum);
         System.out.println(name + " your total right now is " + total + " .");
         points = total;
     }

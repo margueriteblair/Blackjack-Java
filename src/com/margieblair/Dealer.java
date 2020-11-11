@@ -16,7 +16,7 @@ public class Dealer extends Hand{
     }
 
     public void displayPoints() {
-        var total = cpuCards.stream().map(Card::returnCardValue).reduce(0, Integer::sum);
+        var total = cpuCards.stream().map(Card::getRank).reduce(0, Integer::sum);
         System.out.println(name + " your total right now is " + total + ".");
         points = total;
     }

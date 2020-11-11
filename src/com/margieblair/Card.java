@@ -12,8 +12,12 @@ public class Card {
         this.rank = rank;
     }
 
+    public int getRank() {
+        return rank;
+    }
+
     public void displayCard() {
-        System.out.println(suit + " " + rank);
+        System.out.println(suit + " " + returnCardValue());
     }
 
     public String returnCardValue() {
@@ -23,13 +27,13 @@ public class Card {
                     output = "ACE";
                     break;
                 case 11:
-                    output = "JA";
+                    output = "JACK";
                     break;
                 case 12:
-                    output = "QU";
+                    output = "QUEEN";
                     break;
                 case 13:
-                    output = "KI";
+                    output = "KING";
                     break;
                 default:
                     output = rank == 10 ? Integer.toString(rank) : " " + rank;
